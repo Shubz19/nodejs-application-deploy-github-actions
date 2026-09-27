@@ -21,6 +21,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/ubuntu/nodejs-application-deploy-github-actions
+            git reset --hard HEAD
             git pull
             docker-compose up -d --build
 
